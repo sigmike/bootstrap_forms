@@ -28,21 +28,24 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h1>Bootstrap Forms</h1>
+          <h1>
+<a name="bootstrap-forms" class="anchor" href="#bootstrap-forms"><span class="octicon octicon-link"></span></a>Bootstrap Forms</h1>
 
 <p><a href="http://travis-ci.org/sethvargo/bootstrap_forms"><img src="https://secure.travis-ci.org/sethvargo/bootstrap_forms.png?branch=master" alt="Build Status"></a></p>
 
-<p>Bootstrap Forms is a nice Rails generator that makes working with <a href="http://twitter.github.com/bootstrap">Bootstrap (by Twitter)</a> even easier on Rails. </p>
+<p>Bootstrap Forms is a nice Rails generator that makes working with <a href="http://twitter.github.com/bootstrap">Bootstrap (by Twitter)</a> even easier on Rails.</p>
 
 <p>Forms with Bootstrap are crowded with additional layout markup. While it's necessary, you shouldn't have to type it every time you create a form! That's why I created Bootstrap Forms.</p>
 
-<h2>Bootstrap 2.0 Compliant!</h2>
+<h2>
+<a name="bootstrap-20-compliant" class="anchor" href="#bootstrap-20-compliant"><span class="octicon octicon-link"></span></a>Bootstrap 2.0 Compliant!</h2>
 
-<p>A super special thanks to <a href="https://github.com/vincenzor">vincenzor</a> for updating <code>bootstrap_forms</code> to comply with the new methods and features in Twitter Bootstrap 2.0. </p>
+<p>A super special thanks to <a href="https://github.com/vincenzor">vincenzor</a> for updating <code>bootstrap_forms</code> to comply with the new methods and features in Twitter Bootstrap 2.0.</p>
 
 <p>To get these new features, ensure you are using <code>bootstrap_forms ~&gt; 2.0.0</code>.</p>
 
-<h2>Note/Caution/Warning</h2>
+<h2>
+<a name="notecautionwarning" class="anchor" href="#notecautionwarning"><span class="octicon octicon-link"></span></a>Note/Caution/Warning</h2>
 
 <p>There were <strong>major</strong> changes in the release of version <code>0.1.0</code>:</p>
 
@@ -51,7 +54,8 @@
 <li>
 <code>form_for</code> is no longer overridden by default. There were multiple users who were concerned that this behavior was ill advised. Instead, a new form helper, <code>bootstrap_form_for</code> has been created. This is in line with other form building libraries.</li>
 <li>The gem is now a Rails 3 Engine. As such, <strong>Bootstrap Forms will not work in &lt; Rails 3.0</strong>. The engine is automatically mounted when including the gem in your <code>Gemfile</code>.</li>
-</ol><h2>Installation</h2>
+</ol><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>Add it to your <code>Gemfile</code>:</p>
 
@@ -62,120 +66,146 @@
 
 <p>Be sure to restart your Rails server after installing the gem.</p>
 
-<h2>Why?</h2>
+<h2>
+<a name="why" class="anchor" href="#why"><span class="octicon octicon-link"></span></a>Why?</h2>
 
 <p>With Bootstrap, you would need the following code for a form:</p>
 
-<div class="highlight">
-<pre><span class="c">/ using HAML</span>
+<div class="highlight highlight-haml"><pre><span class="c">/ using HAML</span>
 <span class="p">=</span> <span class="n">form_for</span> <span class="vi">@model</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
   <span class="nc">.clearfix</span>
     <span class="nt">%label</span> MyLabel
     <span class="nc">.input</span>
       <span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">text_area</span> <span class="ss">:field</span><span class="p">,</span> <span class="ss">:opts</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="p">}</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>Using Bootstrap Forms, this is <strong>much</strong> simpler:</p>
 
-<div class="highlight">
-<pre><span class="c">/ using HAML</span>
+<div class="highlight highlight-haml"><pre><span class="c">/ using HAML</span>
 <span class="p">=</span> <span class="n">bootstrap_form_for</span> <span class="vi">@model</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
   <span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">text_area</span> <span class="ss">:field</span><span class="p">,</span> <span class="ss">:opts</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="p">}</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>The custom form builder will automatically wrap everything for you. This helps clean up your view layer significantly!</p>
 
-<h2>Additional Form Methods</h2>
+<h2>
+<a name="additional-form-methods" class="anchor" href="#additional-form-methods"><span class="octicon octicon-link"></span></a>Additional Form Methods</h2>
 
 <p>Just when you thought you were done... Bootstrap Forms includes additional form helpers that make life <strong>a lot</strong> easier! For example, the markup required for a list of checkboxes is quite cumbersome... well, it used to be.</p>
 
-<h3>collection_check_boxes</h3>
+<h3>
+<a name="collection_check_boxes" class="anchor" href="#collection_check_boxes"><span class="octicon octicon-link"></span></a>collection_check_boxes</h3>
 
 <p><code>collection_check_boxes</code> behaves very similarly to <code>collection_select</code>:</p>
 
-<div class="highlight">
-<pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">collection_check_boxes</span> <span class="ss">:category_ids</span><span class="p">,</span> <span class="no">Category</span><span class="o">.</span><span class="n">all</span><span class="p">,</span> <span class="ss">:id</span><span class="p">,</span> <span class="ss">:name</span>
-</pre>
-</div>
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">collection_check_boxes</span> <span class="ss">:category_ids</span><span class="p">,</span> <span class="no">Category</span><span class="o">.</span><span class="n">all</span><span class="p">,</span> <span class="ss">:id</span><span class="p">,</span> <span class="ss">:name</span>
+</pre></div>
 
+<p>You can set the <code>inline</code> option to build inline checkboxes:</p>
 
-<h3>collection_radio_buttons</h3>
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">collection_check_boxes</span> <span class="ss">:category_ids</span><span class="p">,</span> <span class="no">Category</span><span class="o">.</span><span class="n">all</span><span class="p">,</span> <span class="ss">:id</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:inline</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div>
+
+<h3>
+<a name="collection_radio_buttons" class="anchor" href="#collection_radio_buttons"><span class="octicon octicon-link"></span></a>collection_radio_buttons</h3>
 
 <p>See description above...</p>
 
-<div class="highlight">
-<pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">collection_radio_buttons</span> <span class="ss">:primary_category_id</span><span class="p">,</span> <span class="no">Category</span><span class="o">.</span><span class="n">all</span><span class="p">,</span> <span class="ss">:id</span><span class="p">,</span> <span class="ss">:name</span>
-</pre>
-</div>
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">collection_radio_buttons</span> <span class="ss">:primary_category_id</span><span class="p">,</span> <span class="no">Category</span><span class="o">.</span><span class="n">all</span><span class="p">,</span> <span class="ss">:id</span><span class="p">,</span> <span class="ss">:name</span>
+</pre></div>
 
+<p>You can set the <code>inline</code> option to build inline radios:</p>
 
-<h3>radio_buttons</h3>
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">collection_radio_buttons</span> <span class="ss">:primary_category_id</span><span class="p">,</span> <span class="no">Category</span><span class="o">.</span><span class="n">all</span><span class="p">,</span> <span class="ss">:id</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:inline</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div>
 
-<div class="highlight">
-<pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">radio_buttons</span> <span class="ss">:published</span><span class="p">,</span> <span class="p">{</span> <span class="s2">"Published"</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="s2">"Unpublished"</span> <span class="o">=&gt;</span> <span class="kp">false</span> <span class="p">}</span>
-</pre>
-</div>
+<h3>
+<a name="check_box" class="anchor" href="#check_box"><span class="octicon octicon-link"></span></a>check_box</h3>
 
+<p>Also supports <code>inline</code> option:</p>
+
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">check_box</span> <span class="ss">:enabled</span><span class="p">,</span> <span class="ss">:inline</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div>
+
+<h3>
+<a name="radio_buttons" class="anchor" href="#radio_buttons"><span class="octicon octicon-link"></span></a>radio_buttons</h3>
+
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">radio_buttons</span> <span class="ss">:published</span><span class="p">,</span> <span class="p">{</span> <span class="s2">"Published"</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="s2">"Unpublished"</span> <span class="o">=&gt;</span> <span class="kp">false</span> <span class="p">}</span>
+</pre></div>
+
+<p>You can set the <code>:inline</code> option to build inline radios.</p>
+
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">radio_buttons</span> <span class="ss">:published</span><span class="p">,</span> <span class="p">{</span> <span class="s2">"Published"</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="s2">"Unpublished"</span> <span class="o">=&gt;</span> <span class="kp">false</span> <span class="p">},</span> <span class="p">{</span> <span class="ss">:inline</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span>
+</pre></div>
+
+<p>You can set radio options by passing a hash instead of a value:</p>
+
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">radio_buttons</span> <span class="ss">:published</span><span class="p">,</span> <span class="p">{</span> <span class="s2">"Published"</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="s2">"Unpublished"</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:value</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span> <span class="ss">:disabled</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">}</span> <span class="p">}</span>
+</pre></div>
 
 <p>Ruby 1.8 doesn't guarantee hashes are ordered. If you care, pass in nested arrays or <code>ActiveSupport::OrderedHash</code>.</p>
 
-<h2>Uneditable Input</h2>
+<h2>
+<a name="uneditable-input" class="anchor" href="#uneditable-input"><span class="octicon octicon-link"></span></a>Uneditable Input</h2>
 
 <p>Bootstrap Forms adds another helper method that generates the necessary markup for uneditable inputs:</p>
 
-<div class="highlight">
-<pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">uneditable_input</span> <span class="ss">:name</span>
-</pre>
-</div>
-
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">uneditable_input</span> <span class="ss">:name</span>
+</pre></div>
 
 <p>yields:</p>
 
-<div class="highlight">
-<pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"organization_name"</span><span class="nt">&gt;</span>Organization Name<span class="nt">&lt;/label&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"uneditable-input"</span><span class="nt">&gt;</span>The Variety Hour<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</pre>
-</div>
+</pre></div>
 
+<h2>
+<a name="submit-tag" class="anchor" href="#submit-tag"><span class="octicon octicon-link"></span></a>Submit Tag</h2>
 
-<h2>Submit Tag</h2>
+<p>Bootstrap Forms also adds a default actions panel when you call <code>f.actions</code>:</p>
 
-<p>Bootstrap Forms also adds a default actions panel when you call <code>f.submit</code>:</p>
-
-<div class="highlight">
-<pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">submit</span>
-</pre>
-</div>
-
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">actions</span>
+</pre></div>
 
 <p>generates:</p>
 
-<div class="highlight">
-<pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actions"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actions"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"..."</span> <span class="na">class=</span><span class="s">"btn primary"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"..."</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>You can skip the cancel button by passing the <code>:include_cancel</code> button a <code>false</code> value.</p>
 
 <p>Pretty swell if you ask me.</p>
 
-<h2>Adding More Options</h2>
+<h2>
+<a name="adding-more-options" class="anchor" href="#adding-more-options"><span class="octicon octicon-link"></span></a>Adding More Options</h2>
 
 <p>You can add as many options to any form helper tag. If they are interpreted by Bootstrap Forms, they are interpreted and rendered in the output. If not, they are passed along as values to the final HTML form object.</p>
 
-<h3>Available Options</h3>
+<h3>
+<a name="form-options" class="anchor" href="#form-options"><span class="octicon octicon-link"></span></a>Form Options</h3>
+
+<table>
+<tr>
+<th>Name</th>
+    <th>Description</th>
+    <th>Usage</th>
+    <th>Default</th>
+  </tr>
+<tr>
+<th>summary_errors</th>
+    <td>Show summary errors at the top</td>
+    <td><tt>= bootstrap_form_for <a href="https://github.com/thing" class="user-mention">@thing</a>, summary_errors: false</tt></td>
+    <td><tt>true</tt></td>
+  </tr>
+</table><h3>
+<a name="field-options" class="anchor" href="#field-options"><span class="octicon octicon-link"></span></a>Field Options</h3>
 
 <table>
 <tr>
@@ -186,57 +216,93 @@
 <tr>
 <th>help_inline</th>
     <td>Add inline help text</td>
-    <td>= f.text_field :name, :help_inline =&gt; 'help me!'</td>
+    <td><tt>= f.text_field :name, :help_inline =&gt; 'help me!'</tt></td>
   </tr>
 <tr>
 <th>help_block</th>
     <td>Add block help text (below)</td>
-    <td>= f.text_field :name, :help_block =&gt; 'help me!'</td>
+    <td><tt>= f.text_field :name, :help_block =&gt; 'help me!'</tt></td>
   </tr>
 <tr>
 <th>error</th>
     <td>Styles the field as error (red)</td>
-    <td>= f.text_field :name, :error =&gt; 'This is an error!'</td>
+    <td><tt>= f.text_field :name, :error =&gt; 'This is an error!'</tt></td>
   </tr>
 <tr>
 <th>success</th>
     <td>Styles the field as success (green)</td>
-    <td>= f.text_field :name, :success =&gt; 'This checked out OK'</td>
+    <td><tt>= f.text_field :name, :success =&gt; 'This checked out OK'</tt></td>
   </tr>
 <tr>
 <th>warning</th>
     <td>Styles the field as warning (yellow)</td>
-    <td>= f.text_field :name, :warning =&gt; 'Take a look at this...'</td>
+    <td><tt>= f.text_field :name, :warning =&gt; 'Take a look at this...'</tt></td>
   </tr>
 <tr>
 <th>prepend</th>
     <td>Adds special text to the front of the input</td>
-    <td>= f.text_field :name, :prepend =&gt; '@'</td>
+    <td><tt>= f.text_field :name, :prepend =&gt; '@'</tt></td>
   </tr>
 <tr>
 <th>append</th>
     <td>Adds special text at the end of the input</td>
-    <td>= f.text_field :name, :append =&gt; '@'</td>
+    <td><tt>= f.text_field :name, :append =&gt; '@'</tt></td>
   </tr>
-</table><h2>Internationalization/Custom Errors</h2>
+<tr>
+<th>append_button</th>
+    <td>
+      Adds the given button to the end of the input. The value is a hash.<br>
+      :label is the button label<br>
+      :icon adds an icon before the label<br>
+      :class has a default value of 'btn'<br>
+      :type has a default value of 'button'<br>
+      Any other entries are passed directly to Rails's tag helper.
+      Pass an array of hashes to append multiple buttons.
+    </td>
+    <td><tt>= f.text_field :name, :append_button =&gt; { :label =&gt; 'Button label', :icon =&gt; 'icon-plus', :type =&gt; 'button' }</tt></td>
+  </tr>
+<tr>
+<th>label</th>
+    <td>Customize the field's label. Pass false to have no label.</td>
+    <td><tt>= f.text_field :name, :label =&gt; 'Other name'</tt></td>
+  </tr>
+<tr>
+<th>control_group</th>
+    <td>Pass false to remove the control group and controls HTML, leaving only the label and input.</td>
+    <td><tt>= f.text_field :name, :control_group =&gt; false</tt></td>
+  </tr>
+<tr>
+<th>:required =&gt; false</th>
+    <td>Pass false to ignore presence validation checks that add a required attribute on the generated element.</td>
+    <td><tt>= f.text_field :name, :required =&gt; false</tt></td>
+  </tr>
+</table><h2>
+<a name="internationalizationcustom-errors" class="anchor" href="#internationalizationcustom-errors"><span class="octicon octicon-link"></span></a>Internationalization/Custom Errors</h2>
 
 <p>As of <code>1.0.2</code>, <code>bootstrap_forms</code> supports I18n! More support is being added, but you can change the error header and cancel button like this:</p>
 
-<div class="highlight">
-<pre><span class="c1"># config/locales/en.yml</span>
+<div class="highlight highlight-yaml"><pre><span class="c1"># config/locales/en.yml</span>
 <span class="l-Scalar-Plain">en</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">bootstrap_forms</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">errors</span><span class="p-Indicator">:</span>
       <span class="l-Scalar-Plain">header</span><span class="p-Indicator">:</span> <span class="s">'Your</span><span class="nv"> </span><span class="s">%{model}</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">wrong!'</span>
     <span class="l-Scalar-Plain">buttons</span><span class="p-Indicator">:</span>
       <span class="l-Scalar-Plain">cancel</span><span class="p-Indicator">:</span> <span class="s">'Forget</span><span class="nv"> </span><span class="s">it!'</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>Obviously you can also change to a different <code>lang.yml</code> file and use the same syntax.</p>
 
-<h2>Contributing</h2>
+<h2>
+<a name="nested-forms" class="anchor" href="#nested-forms"><span class="octicon octicon-link"></span></a>Nested Forms</h2>
+
+<p>Bootstrap Forms works with <a href="https://github.com/ryanb/nested_form">Ryan Bates' nested_form</a> out of the box. Just add <code>nested_form</code> to you Gemfile and <code>bootstrap_forms</code> will automatically add a builder for you:</p>
+
+<div class="highlight highlight-haml"><pre><span class="p">=</span> <span class="n">bootstrap_nested_form_for</span> <span class="vi">@model</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+
+</pre></div>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>I'm pretty dam active on github. Fork and submit a pull request. Most of my pull requests are merged the same day. Make sure you:</p>
 
@@ -247,15 +313,25 @@
 <strong>Test/Spec</strong> the changes</li>
 <li>
 <strong>Document</strong> your changes</li>
-</ul><h2>License</h2>
+</ul><h2>
+<a name="license--authors" class="anchor" href="#license--authors"><span class="octicon octicon-link"></span></a>License &amp; Authors</h2>
 
-<p>Copyright (c) 2012 Seth Vargo</p>
+<ul>
+<li>Author:: Seth Vargo (<a href="mailto:sethvargo@gmail.com">sethvargo@gmail.com</a>)</li>
+</ul><div class="highlight highlight-text"><pre>Copyright 2012-2013 Seth Vargo &lt;sethvargo@gmail.com&gt;
 
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+    http://www.apache.org/licenses/LICENSE-2.0
 
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</pre></div>
         </section>
 
         <aside id="sidebar">
@@ -270,7 +346,7 @@
 
           <p class="repo-owner"><a href="https://github.com/sethvargo/bootstrap_forms"></a> is maintained by <a href="https://github.com/sethvargo">sethvargo</a>.</p>
 
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
       </div>
     </div>
@@ -281,7 +357,7 @@
           </script>
           <script type="text/javascript">
             try {
-              var pageTracker = _gat._getTracker("UA-12012976-13");
+              var pageTracker = _gat._getTracker("UA-12012976-11");
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
